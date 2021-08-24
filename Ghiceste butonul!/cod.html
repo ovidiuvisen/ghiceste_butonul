@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Ghiceste butonul!</title>
+    <style type=text/css>
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            color: black;
+        }
+        div {
+            text-align: center;
+            font-size: 40px;
+            margin-top: 100px;
+        }
+        button {
+            border-style: solid;
+            border-width: 5px;
+            border-color: black;
+            padding: 20px;
+            border-radius: 50px;
+        }
+        .button12 {
+            text-align: right;
+            background-color: black;
+            color:white;
+            border-radius: 0px;
+        }
+        .new {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="font-size: 300%;"><strong>Alege butonul castigator!</strong></h1>
+    <div class="px-10 mt=10">
+        <button  id="butn1" class="btn" onclick="myFunction(this.id)">Buton 1</button>
+        <button  id="butn2" class="btn" onclick="myFunction(this.id)">Buton 2</button>
+        <button  id="butn3" class="btn" onclick="myFunction(this.id)">Buton 3</button>
+    </div>
+
+
+    <div>
+        <p>Butonul castigator este: <span id="numar"></span></p>
+        <p id="mesaj"></p>
+    </div>
+    <div class="new">
+    <button class="button12" type="button" onClick="window.location.reload();">Restart</button>
+    </div>
+
+    <script>
+
+        function myFunction(id) {
+            var x = Math.floor((Math.random() * 3) + 1);
+            if (id === "butn" + x) {
+                document.getElementById("numar").innerHTML = x;
+                document.getElementById("mesaj").innerHTML = "Ai castigat!";
+                document.getElementById(id).style.backgroundColor="green";
+                
+
+            } else {
+                document.getElementById("numar").innerHTML = x;
+                document.getElementById("mesaj").innerHTML = "Ai pierdut...";
+                document.getElementById(id).style.backgroundColor="red";
+                document.getElementById("butn" + x).style.backgroundColor="green";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
